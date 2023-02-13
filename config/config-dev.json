@@ -23,8 +23,8 @@
   },
   "nats": {
     "host": "127.0.01",
-    "userName": "",
-    "password": "",
+    "userName": "admin",
+    "password": "T0pS3cr3t",
     "port": 4222
   },
   "etcd": {

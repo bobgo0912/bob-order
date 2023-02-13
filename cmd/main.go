@@ -5,7 +5,10 @@ import (
 	"github.com/bobgo0912/b0b-common/pkg/config"
 	"github.com/bobgo0912/b0b-common/pkg/etcd"
 	"github.com/bobgo0912/b0b-common/pkg/log"
+	"github.com/bobgo0912/b0b-common/pkg/nats"
+	"github.com/bobgo0912/b0b-common/pkg/redis"
 	"github.com/bobgo0912/b0b-common/pkg/server"
+	on "github.com/bobgo0912/bob-order/interal/nats"
 	"github.com/bobgo0912/bob-order/interal/rpc"
 	"os"
 	"os/signal"
@@ -24,6 +27,19 @@ func main() {
 	rpc.RegService(grpcServer)
 	mainServer.AddServer(grpcServer)
 	err := mainServer.Start(ctx)
+	if err != nil {
+		log.Panic(err)
+	}
+	client, err := redis.NewClient()
+	if err != nil {
+		log.Panic(err)
+	}
+	natsClient, err := nats.NewJetClient()
+	if err != nil {
+		log.Panic(err)
+	}
+	handler := on.NewOrderHandler(natsClient)
+	err = handler.Start(ctx, client)
 	if err != nil {
 		log.Panic(err)
 	}
