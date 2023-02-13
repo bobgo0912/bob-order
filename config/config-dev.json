@@ -1,16 +1,18 @@
 {
   "nodeId": "123",
-  "serviceName": "settle",
+  "serviceName": "order",
   "host": "0.0.0.0",
-  "hostName": "settle",
-  "port": 8888,
-  "rpcPort": 8889,
+  "hostName": "order",
+  "port": 6666,
+  "rpcPort": 6669,
   "mysql": {
-    "userName": "root",
-    "password": "123456",
-    "host": "127.0.0.1",
-    "port": 3306,
-    "database": "oa_settle"
+    "order": {
+      "userName": "root",
+      "password": "123456",
+      "host": "127.0.0.1",
+      "port": 3306,
+      "database": "order"
+    }
   },
   "redis": {
     "hosts": [
