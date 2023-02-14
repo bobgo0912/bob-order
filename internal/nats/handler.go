@@ -48,3 +48,11 @@ func (s *Handle) Handle(msg *nats.Msg) {
 		log.Warn("Handle GetHandlers fail Sub=", msg.Subject)
 	}
 }
+func (s *Handle) OrderSettle(data []byte) error {
+
+	return nil
+}
+
+func (s *Handle) OrderCancel(data []byte) error {
+	return nil
+}

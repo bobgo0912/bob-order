@@ -5,7 +5,7 @@ go 1.19
 require (
 	github.com/Masterminds/squirrel v1.5.3
 	github.com/bobgo0912/b0b-common v1.0.3-0.20230213085104-3e8c83318a2c
-	github.com/bobgo0912/bob-armory v0.0.0-20230213080922-f78f445ed404
+	github.com/bobgo0912/bob-armory v0.0.0-20230214075655-2c92889ecf3f
 	github.com/jmoiron/sqlx v1.3.5
 	github.com/nats-io/nats.go v1.23.0
 	github.com/pkg/errors v0.9.1

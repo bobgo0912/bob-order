@@ -15,7 +15,7 @@ type Card struct {
 	HandleNode string `db:"handle_node" json:"handleNode"` //
 	Period     string `db:"period" json:"period"`          //period
 	PlayerId   uint64 `db:"player_id" json:"playerId"`     //playerId
-
+	MerchantId string `db:"merchant_id" json:"merchantId"`
 }
 type CardStore struct {
 	*sql.BaseStore[Card]

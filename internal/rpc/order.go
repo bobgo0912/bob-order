@@ -6,7 +6,7 @@ import (
 	"github.com/bobgo0912/b0b-common/pkg/log"
 	"github.com/bobgo0912/b0b-common/pkg/server"
 	"github.com/bobgo0912/bob-armory/pkg/order"
-	"github.com/bobgo0912/bob-order/interal/repo"
+	"github.com/bobgo0912/bob-order/internal/repo"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 )
@@ -97,4 +97,8 @@ func (o *OrderRpcServer) GetCardsByPeriod(ctx context.Context, req *order.CardPe
 		s = append(s, &orderS)
 	}
 	return &order.CardResp{Data: s}, nil
+}
+func (o *OrderRpcServer) GetUnSettleCardsIdsByPeriod(ctx context.Context, req *order.CardsIdsReq) (*order.CardsIdsResp, error) {
+
+	return nil, status.Errorf(codes.Unimplemented, "method GetUnSettleCardsIdsByPeriod not implemented")
 }
